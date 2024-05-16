@@ -52,6 +52,7 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+  background-color: #FFFEF8;
 }
 header {
 	display: flex;
@@ -369,6 +370,7 @@ h3{
   font-size: 5em;
   font-family: "Font Awesome 6 Free";
   font-weight: 400;
+  padding-top: 10px;
 
 }
 
@@ -424,7 +426,7 @@ h4 {
 }
 
 #valid {
-  width: 237px;
+  width: 230px;
   height: 36px;
   border-radius: 60px;
   background: #A7A7A7;
@@ -434,18 +436,28 @@ h4 {
   font-family: Syne;
   font-size: 14px;
   margin: 75px 198px 55px 195px;
-}
-#valid:hover{
-  background: #1D6154;
   cursor: pointer;
 }
 
-.edit-banner {
-  margin-top: 0;
-  height: 59px;
-  background-color: #000000;
 
+.edit-banner {
+ height: 3.5rem;
+ width: 100vw;
+ margin-left: calc(50% - 50vw);
+ background: #000;
+ display: none;
+ flex-direction: row;
+ gap: 1rem;
+ justify-content: center;
+ align-items: center;
+ font-family: 'work sans';
+ font-size: 1rem;
+ font-weight: 400;
+ color: #FFF;
 }
+
+
+
 
 .edit-banner p,
 .icon-banner i {
@@ -456,6 +468,7 @@ h4 {
   font-weight: 400;
   line-height: normal;
   cursor: pointer;
+  padding-top: 10px;
 }
 
 a {
@@ -476,12 +489,15 @@ a {
 }
 .delete-icon {
   background-color: #000;
+  border-radius: 2px;
+  font-size: 10px;
+  padding-top: 10px;
   width: 17px;
   height: 17px;
   flex-shrink: 0;
   position: absolute;
   top: 9px;
-  right: 12px;
+  right: 9px;
   cursor: pointer;
   color: white;
 

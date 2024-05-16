@@ -198,13 +198,31 @@ async function addNewImage() {
         const title = document.getElementById("photo-title").value;
         const categoryId = document.getElementById("category-select").value;
         const imageInput = document.getElementById("add-photo-input"); //image
+        const submit = document.getElementById("valid");
 
+      //fonction pour la couleur du bouton valider
+      function checkForm () {
+          
+        if (title && categoryId && imageInput.files[0]) {
+            submit.disabled = false;
+            submit.style.backgroundColor = "#1d6154";
+
+        }
+        else {
+            submit.disabled = true;
+            submit.style.backgroundColor = "";
+        }
+      
+        checkForm();
+
+    
         //validation des champs du formulaire
+        
         if (!title || !categoryId || !imageInput.files[0]) {
             console.error("Veuillez remplir tous les champs du formulaire.");
-            return; // Sortir de la fonction si la validation échoue
-        }
+            return; // Sortir de la fonction si la validation échoue;
 
+        }
         // Récupére le premier fichier du champ de type fichier
         const imageFile = imageInput.files[0];
 

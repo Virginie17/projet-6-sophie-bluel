@@ -50,7 +50,7 @@ async function getCategories() {
       console.log(error);
     });
 }
-getCategories();
+getCategories(); //Appelle la fonction getcategories pour afficher les filtres
 
 // Fonction pour filtrer les travaux en fonction de la catégorie sélectionnée
 function filterWorks(categoryId) {
@@ -124,7 +124,7 @@ function showBannerIfValidToken() {
 
     loginLink.style.display = "none";
     logoutLink.style.display = "block";
-    filtersContainer.style.display = "none"; //cache les filtres en mode administrateur
+    filtersContainer.style.display = "none"; //cache les boutons en mode administrateur
   } else {
     // Cache la bannière et d'autres éléments associés à l'administrateur
     banner.style.display = "none";
