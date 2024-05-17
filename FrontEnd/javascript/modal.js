@@ -198,8 +198,9 @@ async function addNewImage() {
         const title = document.getElementById("photo-title").value;
         const categoryId = document.getElementById("category-select").value;
         const imageInput = document.getElementById("add-photo-input"); //image
-        const submit = document.getElementById("valid");
-
+        const submit = document.getElementById("valid"); //bouton valider
+        
+        
       //fonction pour la couleur du bouton valider
       function checkForm () {
           
@@ -212,9 +213,9 @@ async function addNewImage() {
             submit.disabled = true;
             submit.style.backgroundColor = "";
         }
-      
-        checkForm();
+    }
 
+    checkForm();
     
         //validation des champs du formulaire
         
@@ -254,8 +255,14 @@ async function addNewImage() {
         } catch (error) {
             console.error("Erreur :", error);
         }
-    });
-}
+
+    
+    }
+    );
+   
+    };
+    
+
 addNewImage();
 
 // PRÉVISUALISATION

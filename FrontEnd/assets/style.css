@@ -491,13 +491,13 @@ a {
   background-color: #000;
   border-radius: 2px;
   font-size: 10px;
-  padding-top: 10px;
-  width: 17px;
-  height: 17px;
+  padding-top: 4px;
+  width: 16px;
+  height: 12px;
   flex-shrink: 0;
   position: absolute;
-  top: 9px;
-  right: 9px;
+  top: 6px;
+  right: 6px;
   cursor: pointer;
   color: white;
 
