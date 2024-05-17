@@ -233,7 +233,7 @@ async function addNewImage() {
         }
         
         // Récupére le premier fichier du champ de type fichier
-        const imageFile = imageInput;
+        const imageFile = imageInput.files[0];
 
         // Construire un objet FormData pour envoyer le fichier au serveur
         const formData = new FormData();
