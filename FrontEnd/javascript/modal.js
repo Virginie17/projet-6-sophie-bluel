@@ -185,47 +185,55 @@ function generateCategoryOptions() {
 }
 generateCategoryOptions();
 
+//fonction pour la couleur du bouton valider
+function checkForm () {
+    const title = document.getElementById("photo-title").value;
+    const categoryId = document.getElementById("category-select").value;
+    const imageInput = document.getElementById("add-photo-input").files[0];
+    const submit = document.getElementById("valid");
+
+        
+          
+    if (title && categoryId && imageInput) {
+        submit.disabled = false;
+        submit.style.backgroundColor = "#1d6154";
+
+    } else {
+        submit.disabled = true;
+        submit.style.backgroundColor = "";
+    }
+}
+//ajouter les evénements de changement aux champs du formulaire
+document.getElementById("photo-title").addEventListener('input', checkForm);
+document.getElementById("category-select").addEventListener('change', checkForm);
+document.getElementById("add-photo-input").addEventListener('change', checkForm);
+
+
+
+
 
 // AJOUT IMAGES - TITRE - CATEGORIE 
 async function addNewImage() {
     const workForm = document.querySelector("#newWork");
+    
 
     // evénement de clic au bouton de validation
     document.getElementById("valid").addEventListener('click', async function (event) {
         event.preventDefault();
 
-        // Récupére les valeurs des champs du formulaire
+        //recupere les valeurs des champs du formulaire
         const title = document.getElementById("photo-title").value;
         const categoryId = document.getElementById("category-select").value;
-        const imageInput = document.getElementById("add-photo-input"); //image
-        const submit = document.getElementById("valid"); //bouton valider
-        
-        
-      //fonction pour la couleur du bouton valider
-      function checkForm () {
-          
-        if (title && categoryId && imageInput.files[0]) {
-            submit.disabled = false;
-            submit.style.backgroundColor = "#1d6154";
+        const imageInput = document.getElementById("add-photo-input");//image
 
-        }
-        else {
-            submit.disabled = true;
-            submit.style.backgroundColor = "";
-        }
-    }
-
-    checkForm();
-    
         //validation des champs du formulaire
-        
         if (!title || !categoryId || !imageInput.files[0]) {
-            console.error("Veuillez remplir tous les champs du formulaire.");
-            return; // Sortir de la fonction si la validation échoue;
-
+            console.error("Veuillez remplir tous les champs.");
+            return;// sortir de la fonction si la validation echoue
         }
+        
         // Récupére le premier fichier du champ de type fichier
-        const imageFile = imageInput.files[0];
+        const imageFile = imageInput;
 
         // Construire un objet FormData pour envoyer le fichier au serveur
         const formData = new FormData();
