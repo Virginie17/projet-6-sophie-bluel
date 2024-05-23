@@ -164,26 +164,31 @@ function removeProjectFromDOM(projectId) {
 
                                 ///  AJOUTS D'IMAGE  ///
 
-// LISTE CATEGORIE
-const categories = [
-    { id: 1, name: "Objets" },
-    { id: 2, name: "Appartements" },
-    { id: 3, name: "Hotels & restaurants" }
-];
+// LISTE CATEGORIES
 
-// Fonction pour générer les options de la liste déroulante des catégories
-function generateCategoryOptions() {
-    const categorySelect = document.getElementById("category-select");
+// Fonction pour récupérer les catégories via l'API
+   
+   const categorySelect = document.getElementById("category-select");
+    fetch('http://localhost:5678/api/categories')
+    .then(function(response) {
+        if (response.ok) {
+            return response.json(); 
+    }
+    })
+    .then(function(data) {
+        let categories = data;
 
-    // Parcours la liste des catégories et créer une option pour chaque catégorie
-    categories.forEach(category => {
+        categories.forEach(category => {
         const option = document.createElement("option");
         option.value = category.id;
         option.text = category.name;
         categorySelect.appendChild(option);
     });
 }
-generateCategoryOptions();
+
+    ).catch(function(error) {
+        console.log(error);
+    });
 
 //fonction pour la couleur du bouton valider
 function checkForm () {

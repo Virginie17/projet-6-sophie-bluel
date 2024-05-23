@@ -98,9 +98,11 @@ function addFilterBtnsEventListeners() {
       btn.classList.add("btn-active");
       // Appelle une fonction de filtrage avec l'ID de données du bouton cliqué.
       filterWorks(btn.dataset.id);
+      
     });
   });
 }
+
 
 // Fonction pour afficher la bannière si le token est valide
 function showBannerIfValidToken() {
@@ -144,4 +146,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
